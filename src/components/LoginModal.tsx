@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { X, Terminal, Lock, User, Eye, EyeOff } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import React from "react";
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -89,7 +90,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
         "",
         "[ ✓ ACCESS GRANTED ]",
         `[ Welcome back, ${username} ]`,
-        "[ Session ID: ${Math.random().toString(36).substr(2, 9).toUpperCase()} ]",
+        `[ Session ID: ${Math.random().toString(36).substr(2, 9).toUpperCase()} ]`,
         "",
         "> Redirecting to secure dashboard...",
       ]);
@@ -138,7 +139,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-2xl"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
             onKeyDown={handleKeyPress}
           >
             {/* Terminal Window */}
@@ -191,17 +192,10 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
                       className="flex-1 bg-transparent border-none outline-none font-mono text-sm text-primary caret-primary"
-                      placeholder="enter username_"
-                      autoComplete="username"
+                      placeholder="enter username"
+                      autoComplete="off"
                       disabled={isTyping}
                     />
-                    <motion.span
-                      animate={{ opacity: [1, 0, 1] }}
-                      transition={{ duration: 1, repeat: Infinity }}
-                      className="text-primary"
-                    >
-                      █
-                    </motion.span>
                   </form>
                 )}
 
@@ -216,7 +210,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           className="flex-1 bg-transparent border-none outline-none font-mono text-sm text-primary caret-primary"
-                          placeholder="enter password_"
+                          placeholder="enter password"
                           autoComplete="current-password"
                           disabled={isTyping}
                         />
@@ -232,13 +226,6 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                           )}
                         </button>
                       </div>
-                      <motion.span
-                        animate={{ opacity: [1, 0, 1] }}
-                        transition={{ duration: 1, repeat: Infinity }}
-                        className="text-primary"
-                      >
-                        █
-                      </motion.span>
                     </div>
                     <div className="flex gap-2 text-xs font-mono text-primary/50">
                       <span>[ Press Enter to authenticate ]</span>
