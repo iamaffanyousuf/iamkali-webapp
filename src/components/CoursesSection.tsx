@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { BookOpen, Users, Award, ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import { courses } from "../data/courses";
+import React from "react";
 
 interface Course {
   id: number;

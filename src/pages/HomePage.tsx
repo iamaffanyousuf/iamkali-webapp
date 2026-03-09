@@ -4,6 +4,7 @@ import { VideoGrid } from "../components/VideoGrid";
 import { CoursesSection } from "../components/CoursesSection";
 import { TutorialsSection } from "../components/TutorialsSection";
 import { Footer } from "../components/Footer";
+import React from "react";
 
 // Mock data - will be replaced with Supabase data
 const mockVideos = [

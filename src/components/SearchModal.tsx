@@ -1,10 +1,11 @@
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { X, Search, Terminal, Code, Video, BookOpen, Users } from "lucide-react";
 import { useState, useEffect, useRef, useMemo } from "react";
 import { useNavigate } from "react-router";
 import { videos } from "../data/videos";
 import { courses } from "../data/courses";
 import { tutorials } from "../data/tutorials";
+import React from "react";
 
 interface SearchModalProps {
   isOpen: boolean;

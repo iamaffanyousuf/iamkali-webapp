@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Terminal, Code, Database, Network, Shield, Cpu } from "lucide-react";
 import { Link } from "react-router";
 import { tutorials } from "../data/tutorials";
+import React from "react";
 
 interface Tutorial {
   id: number;

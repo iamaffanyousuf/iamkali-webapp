@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { LoginModal } from "./LoginModal";
 import { SearchModal } from "./SearchModal";
 import { EasterEggModal } from "./EasterEggModal";
+import React from "react";
 
 interface NavigationProps {
   videos?: any[];
